@@ -219,14 +219,14 @@ static int writeOggPage(ogg_page *page, FILE *os) {
     return written;
 }
 
-const opus_int32 bitrate = 16000;
-const opus_int32 rate = 16000;
+const opus_int32 bitrate = 64000; //битрейт
+const opus_int32 rate = 48000; //частота
 const opus_int32 frame_size = 960;
 const int with_cvbr = 1;
 const int max_ogg_delay = 0;
 const int comment_padding = 512;
 
-opus_int32 coding_rate = 16000;
+opus_int32 coding_rate = 48000; //частота
 ogg_int32_t _packetId;
 OpusEncoder *_encoder = 0;
 uint8_t *_packet = 0;
@@ -305,8 +305,7 @@ int initRecorder(const char *path) {
     inopt.skip = 0;
     
     comment_init(&inopt.comments, &inopt.comments_length, opus_get_version_string());
-    coding_rate = 16000;
-    
+
     if (rate != coding_rate) {
         LOGE("Invalid rate");
         return 0;
