@@ -484,7 +484,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             textureOverlayView.setImageResource(R.drawable.icplaceholder);
         }
         cameraReady = false;
-        isFrontface = true;
+        isFrontface = false; //начинать запись кружка с фронтальной камеры
         selectedCamera = null;
         recordedTime = 0;
         progress = 0;
@@ -1526,8 +1526,8 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                 resolution = 320;
                 bitrate = 600000;
             } else {
-                resolution = 240;
-                bitrate = 400000;
+                resolution = 480; //разрешение кружка
+                bitrate = 1200000; //битрейт кружка
             }
 
             videoFile = outputFile;
@@ -1981,7 +1981,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                 audioFormat.setInteger(MediaFormat.KEY_AAC_PROFILE, MediaCodecInfo.CodecProfileLevel.AACObjectLC);
                 audioFormat.setInteger(MediaFormat.KEY_SAMPLE_RATE, 44100);
                 audioFormat.setInteger(MediaFormat.KEY_CHANNEL_COUNT, 1);
-                audioFormat.setInteger(MediaFormat.KEY_BIT_RATE, 32000);
+                audioFormat.setInteger(MediaFormat.KEY_BIT_RATE, 256000); //битрейт аудио кружка
                 audioFormat.setInteger(MediaFormat.KEY_MAX_INPUT_SIZE, 2048 * 10);
 
                 audioEncoder = MediaCodec.createEncoderByType(AUDIO_MIME_TYPE);
