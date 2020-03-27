@@ -551,7 +551,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         setVisibility(VISIBLE);
 
         startAnimation(true);
-        MediaController.getInstance().requestAudioFocus(true);
+//        MediaController.getInstance().requestAudioFocus(true); //ставить на паузу при записи кружка
     }
 
     public FrameLayout getCameraContainer() {
