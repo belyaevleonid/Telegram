@@ -3640,7 +3640,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             adapter.notifyDataSetChanged();
         }
         if (isShowing() && deviceHasGoodCamera && baseFragment != null && backDrawable.getAlpha() != 0 && !cameraOpened) {
-            showCamera();
+//            showCamera(); //отключить превью камеры в пикере
         }
     }
 
