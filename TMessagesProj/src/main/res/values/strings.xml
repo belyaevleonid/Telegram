@@ -1405,6 +1405,7 @@
     <string name="AskAQuestion">Ask a Question</string>
     <string name="EnableAnimations">Enable Animations</string>
     <string name="ChatSettings">Chat Settings</string>
+    <string name="ModSettings">Mod Settings</string>
     <string name="Devices">Devices</string>
     <string name="SettingsHelp">Help</string>
     <string name="Account">Account</string>
@@ -3390,4 +3391,7 @@
     <string name="RemindTodayAt">\'Remind today at\' HH:mm</string>
     <string name="RemindDayAt">\'Remind on\' MMM d \'at\' HH:mm</string>
     <string name="RemindDayYearAt">\'Remind on\' MMM d yyyy \'at\' HH:mm</string>
+    <!--Mod settings-->
+    <string name="ModRoundMessages">Round messages settings</string>
+    <string name="StartRoundFromFront">Record round videos with front camera</string>
 </resources>

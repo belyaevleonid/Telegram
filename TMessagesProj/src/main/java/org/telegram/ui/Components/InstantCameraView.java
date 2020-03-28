@@ -484,7 +484,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             textureOverlayView.setImageResource(R.drawable.icplaceholder);
         }
         cameraReady = false;
-        isFrontface = false; //начинать запись кружка с фронтальной камеры
+        isFrontface = SharedConfig.startFront; //начинать запись кружка с фронтальной камеры
         selectedCamera = null;
         recordedTime = 0;
         progress = 0;

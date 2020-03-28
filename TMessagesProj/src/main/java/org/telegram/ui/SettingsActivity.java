@@ -185,6 +185,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
     private int helpRow;
     private int versionRow;
     private int rowCount;
+    private int modRow;
 
     private String currentBio;
 
@@ -290,6 +291,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         languageRow = rowCount++;
         helpRow = rowCount++;
         versionRow = rowCount++;
+        modRow = rowCount++;
 
         MediaDataController.getInstance(currentAccount).checkFeaturedStickers();
         userInfo = MessagesController.getInstance(currentAccount).getUserFull(UserConfig.getInstance(currentAccount).getClientUserId());
@@ -467,6 +469,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 }
             } else if (position == numberRow) {
                 presentFragment(new ActionIntroActivity(ActionIntroActivity.ACTION_TYPE_CHANGE_PHONE_NUMBER));
+            } else if (position == modRow) {
+                presentFragment(new ModSettingsActivity());
             }
         });
 
@@ -1802,6 +1806,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 new SearchResult(402, LocaleController.getString("AskAQuestion", R.string.AskAQuestion), LocaleController.getString("SettingsHelp", R.string.SettingsHelp), R.drawable.menu_help, () -> showDialog(AlertsCreator.createSupportAlert(SettingsActivity.this))),
                 new SearchResult(403, LocaleController.getString("TelegramFAQ", R.string.TelegramFAQ), LocaleController.getString("SettingsHelp", R.string.SettingsHelp), R.drawable.menu_help, () -> Browser.openUrl(getParentActivity(), LocaleController.getString("TelegramFaqUrl", R.string.TelegramFaqUrl))),
                 new SearchResult(404, LocaleController.getString("PrivacyPolicy", R.string.PrivacyPolicy), LocaleController.getString("SettingsHelp", R.string.SettingsHelp), R.drawable.menu_help, () -> Browser.openUrl(getParentActivity(), LocaleController.getString("PrivacyPolicyUrl", R.string.PrivacyPolicyUrl))),
+
+//                new SearchResult(900, "Mod Settings", R.drawable.menu_settings, ()->presentFragment(new LanguageSelectActivity())),
         };
         private ArrayList<FaqSearchResult> faqSearchArray = new ArrayList<>();
 
@@ -2209,6 +2215,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                         textCell.setTextAndIcon(LocaleController.getString("SettingsHelp", R.string.SettingsHelp), R.drawable.menu_help, false);
                     } else if (position == devicesRow) {
                         textCell.setTextAndIcon(LocaleController.getString("Devices", R.string.Devices), R.drawable.menu_devices, true);
+                    } else if (position == modRow) {
+                        textCell.setTextAndIcon("Mod Settings", R.drawable.menu_settings, true);
                     }
                     break;
                 }
