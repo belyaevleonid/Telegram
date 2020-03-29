@@ -6,3 +6,10 @@ obj/
 local.properties
 .DS_Store
 TMessagesProj/.cxx
+TMessagesProj/config/debug/AndroidManifest.xml
+TMessagesProj/config/debug/AndroidManifest_SDK23.xml
+TMessagesProj/config/release/AndroidManifest.xml
+TMessagesProj/config/release/AndroidManifest_SDK23.xml
+TMessagesProj/config/release.keystore
+TMessagesProj/src/main/java/org/telegram/messenger/BuildVars.java
+TMessagesProj/google-services.json
