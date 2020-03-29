@@ -470,7 +470,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             } else if (position == numberRow) {
                 presentFragment(new ActionIntroActivity(ActionIntroActivity.ACTION_TYPE_CHANGE_PHONE_NUMBER));
             } else if (position == modRow) {
-                presentFragment(new ModSettingsActivity());
+                presentFragment(new ModSettingsActivity(0));
             }
         });
 

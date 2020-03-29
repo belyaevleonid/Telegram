@@ -8,6 +8,7 @@
 
 package org.telegram.messenger;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -17,6 +18,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Build;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -334,6 +336,13 @@ public class Bitmaps {
     }
 
     public static Bitmap createScaledBitmap(Bitmap src, int dstWidth, int dstHeight, boolean filter) {
+        /*Increase crop and preview quality according to user settings*/
+        dstWidth *= SharedConfig.canvasScale;
+        dstHeight *= SharedConfig.canvasScale;
+
+        Log.d("Scale x:", String.valueOf(SharedConfig.canvasScale));
+        Log.d("Wide", String.valueOf(dstWidth));
+        Log.d("Hide", String.valueOf(dstHeight));
         if (Build.VERSION.SDK_INT >= 21) {
             return Bitmap.createScaledBitmap(src, dstWidth, dstHeight, filter);
         }

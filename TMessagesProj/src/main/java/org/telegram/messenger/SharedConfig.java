@@ -97,6 +97,7 @@ public class SharedConfig {
     public static int fontSize = 16;
     public static int bubbleRadius = 10;
     public static int ivFontSize = 16;
+    public static int canvasScale = 1;
     private static int devicePerformanceClass;
 
     public static boolean drawDialogIcons;
@@ -245,6 +246,7 @@ public class SharedConfig {
             repeatMode = preferences.getInt("repeatMode", 0);
             fontSize = preferences.getInt("fons_size", AndroidUtilities.isTablet() ? 18 : 16);
             bubbleRadius = preferences.getInt("bubbleRadius", 10);
+            canvasScale = preferences.getInt("canvasScale", 1);
             ivFontSize = preferences.getInt("iv_font_size", fontSize);
             allowBigEmoji = preferences.getBoolean("allowBigEmoji", true);
             useSystemEmoji = preferences.getBoolean("useSystemEmoji", false);
