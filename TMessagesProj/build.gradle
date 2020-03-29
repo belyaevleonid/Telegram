@@ -124,9 +124,6 @@ android {
         manifest.srcFile 'config/debug/AndroidManifest.xml'
     }
 
-    /*sourceSets.debugAsan {
-        manifest.srcFile 'config/debug/AndroidManifest.xml'
-    }*/
 
     sourceSets.debugMultidex {
         manifest.srcFile 'config/debug/AndroidManifest.xml'
@@ -163,13 +160,14 @@ android {
             sourceSets.debug {
                 manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
             }
-            /*sourceSets.debugAsan {
-                manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
-            }*/
             sourceSets.release {
                 manifest.srcFile 'config/release/AndroidManifest_SDK23.xml'
             }
+            minSdkVersion 29
+            resConfigs "en", "xxhdpi"
             ext {
+                enableCrashlytics = false
+                alwaysUpdateBuildId = false
                 abiVersionCode = 9
             }
         }
@@ -208,15 +206,15 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 28
+        minSdkVersion 29
+        targetSdkVersion 29
         versionName "5.14.0"
 
-        vectorDrawables.generatedDensities = ['mdpi', 'hdpi', 'xhdpi', 'xxhdpi']
+        vectorDrawables.generatedDensities = ['xxhdpi']
 
         externalNativeBuild {
             ndkBuild {
-                arguments "NDK_APPLICATION_MK:=jni/Application.mk", "APP_PLATFORM:=android-16", "--jobs=8"
+                arguments "NDK_APPLICATION_MK:=jni/Application.mk", "APP_PLATFORM:=android-29", "--jobs=8"
                 abiFilters "arm64-v8a"
             }
         }
