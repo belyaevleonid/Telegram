@@ -3394,4 +3394,5 @@
     <!--Mod settings-->
     <string name="ModRoundMessages">Round messages settings</string>
     <string name="StartRoundFromFront">Record round videos with front camera</string>
+    <string name="CanvasScale">Canvas scale factor</string>
 </resources>
